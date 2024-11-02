@@ -1,0 +1,207 @@
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+.main .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+.main .nav img {
+    width: 40px;
+    border-radius: 50%;
+}
+.main_container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+.main_container .greet {
+    margin: -20px 0 10px 0;
+    font-size: 56px;
+    color: #c4c7c6;
+    font-weight: 500;
+    padding: 20px;
+}
+.main_container .greet span {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: colorFlow 3s ease-in-out infinite;
+}
+
+@keyframes colorFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+.main_container .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 15px;
+    padding: 20px;
+    margin-top: -30px;
+}
+.main_container .cards .card {
+    padding: 20px;
+    height: 200px;
+    background: #f0f4f9;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.main_container .cards .card img {
+    position: absolute;width: 35px;
+    padding: 5px;
+    background: white;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+}
+.main_container .cards .card p {
+    color: #585858;
+    font-size: 17px;
+}
+.main_container .cards .card:hover {
+  background: #dfe4ea;
+}
+.main_bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px ;
+    margin: auto;
+}
+.search_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f9f4f9;
+    padding: 7px 15px;
+    border-radius: 50px;
+}
+.search_box img {
+    width: 24px;
+    cursor: pointer;
+}
+.search_box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 8px;
+    font-size: 17px;
+}
+.search_box div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.bottom_info {
+    margin: 15px auto;
+    text-align: center;
+    font-size: 13px;
+}
+.credit {
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px; 
+}
+.credit span {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    font-weight: 500;
+    animation: colorFlow 3s ease-in-out infinite;
+} 
+.loader {
+    animation: rotate .9s linear infinite;
+}
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.result {
+    padding: 0 5% 5% 5%;
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+.result::-webkit-scrollbar {
+  display: none;
+}
+.result_title {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.result img {
+    border-radius: 50%;
+    width: 40px;
+}
+.result .result_data {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: justify;
+}
+.result .result_data {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+.loading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.loading hr {
+    border: none;
+    border-radius: 4px;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 200% 100%; 
+    height: 20px;
+    animation: float 2s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+@media (max-width:600px){
+    .search_box input {
+        flex: none;
+        width: 150px;
+    }
+    .search_box div{
+        gap: 0;
+    }
+    .search_box img {
+        width: 20px;
+    }
+}
